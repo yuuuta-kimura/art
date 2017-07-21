@@ -1,0 +1,28 @@
+@import url("style.css");  
+
+/******************************************************/
+/*body_SetWorks.tpl*/
+/******************************************************/
+
+
+.setworks_list img{
+	width: 50px;
+}
+
+
+
+
+#test{
+	font-size:40px;
+	color: blue;
+	margin-left: 100px;
+}
+
+
+@media screen and (min-width : 768px){
+
+.setworks_list img{
+	width: 100px;
+}
+
+}

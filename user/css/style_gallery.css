@@ -1,0 +1,160 @@
+@import url("style.css");  
+
+
+
+/******************************************************/
+/*body_gallery.tpl*/
+/******************************************************/
+
+.gallery_header
+{
+    position: fixed;            /* ヘッダーの固定 */
+    top: 0px;                   /* 位置(上0px) */
+    left: 0px;                  /* 位置(右0px) */
+    width: 100%;                /* 横幅100%　*/
+	z-index:10;
+	margin: 0;
+	padding: 0;
+	background-color:#2EA7E0;
+}
+ 
+.setworks_list{
+	font-size:16px;
+}
+
+.setworks_list img{
+	width: 90%;
+}
+.detail_work img{
+	width: 100%;	
+}
+
+#nopicture{
+	float: left;
+	width: 90%;
+}
+
+@media screen and (min-width : 768px){
+		
+.setworks_list img{
+	width: 90%;
+}
+#nopicture{
+	width: 90%;
+}
+
+}
+
+
+
+#artist_mainpic{
+	position: relative;	
+	text-align: center;
+}
+
+img.artist_mainpic{
+	width:300px;
+}
+
+@media screen and (min-width : 768px){
+img.artist_mainpic{
+	max-height: 50vh;
+	width:auto;
+}
+}
+
+
+.gallery_block{
+	height: 400px;	
+	font-size: 10px;
+	margin: 0;
+	padding: 0;
+}
+
+
+@media screen and (min-width : 768px){
+	
+.gallery_block{
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+}
+	
+}
+
+#gallery_img{
+	display: table-cell; /*上下中央*/
+	width: 160px;
+	height: 160px;
+	text-align: center; /*左右中央*/
+	vertical-align: middle; /*上下中央*/
+	layout-grid-line:160px; /*IE7*/
+	background-color:#EEEEEE;
+}
+
+img.gallery_img_cover{
+	width: 160px;
+	height: 15px;
+}
+
+img.gallery_img{
+	width:auto;
+	height:auto;
+	max-width:150px;
+	max-height:150px;
+	vertical-align: middle;/*IE7*/	
+}
+
+img.cart_img{
+	width:auto;
+	height:auto;
+	max-width:50px;
+	max-height:50px;
+	vertical-align: middle;/*IE7*/	
+}
+
+
+.gallery_btn{
+	padding: 5px 0px 5px 0px;
+	width:160px;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+	color:#AAAAAA;
+	font-size: 10px;
+}
+
+
+@media screen and (min-width : 768px){
+	
+
+	#gallery_img{
+		width: 180px;
+		height: 180px;
+		layout-grid-line:180px; /*IE7*/
+	}
+
+	img.gallery_img{
+		max-width:170px;
+		max-height:170px;
+	}
+
+	.gallery_btn{
+		padding: 10px 0px 10px 0px;
+		width:180px;
+		font-size: 14px;
+	}	
+	
+}
+
+/******************************************************/
+/*body_order_cart.tpl*/
+/******************************************************/
+#cart-table{
+	font-size:8px;	
+}
+
+@media screen and (min-width : 768px){
+	#cart-table{
+		font-size:14px;	
+	}
+}

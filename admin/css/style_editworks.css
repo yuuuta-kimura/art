@@ -1,0 +1,14 @@
+@import url("style.css");  
+
+
+/******************************************************/
+/*body_EditWorks.tpl*/
+/******************************************************/
+
+.img_workpic_data{
+	width: 80%;
+}
+
+@media screen and (min-width : 768px){
+
+}
