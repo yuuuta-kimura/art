@@ -19,8 +19,9 @@ $params=array();
 $o_smarty->default_modifiers=array('escape');
 $o_smarty->assign('css_file','css/style.css');
 $o_smarty->assign( 'body_tpl', 'body_teikei.tpl' );
-$o_smarty->assign( 'head_tpl', 'head_none.tpl' );
+$o_smarty->assign( 'head_tpl', 'head_teikei.tpl' );
 $o_smarty->assign( 'header_tpl', 'header_none.tpl' );
+
 
 session_start();
 
@@ -44,6 +45,22 @@ if(!empty($_SESSION['user_id']) && !empty($_SESSION['user_pass'])){
 	if($ret){
 		$login_flg ='yes';
 	}
+}
+
+if($ptn=='b'){
+	$kiyaku = file_get_contents('kiyaku_torihiki.txt');
+	$o_smarty->assign( 'naiyo', $kiyaku );	
+}
+
+
+if($ptn=='c'){
+	$kiyaku = file_get_contents('kiyaku_user.txt');
+	$o_smarty->assign( 'naiyo', $kiyaku );	
+}
+
+if($ptn=='d'){
+	$kiyaku = file_get_contents('kiyaku_privacy.txt');
+	$o_smarty->assign( 'naiyo', $kiyaku );	
 }
 
 

@@ -30,7 +30,9 @@ $o_smarty->assign('css_file','css/style.css');
 $o_smarty->assign( 'header_tpl', 'header_none.tpl' );
 $o_smarty->assign( 'footer_tpl', 'footer.tpl' );
 
-$kiyaku = file_get_contents('kiyaku.txt');
+$kiyaku = file_get_contents('kiyaku_artist.txt');
+$kiyaku = file_get_contents('../user/kiyaku_privacy.txt');
+$kiyaku = file_get_contents('../user/kiyaku_torihiki.txt');
 $o_smarty->assign( 'kiyaku', $kiyaku );
 $o_smarty->assign( 'form', 'regist' );
 $error=0;

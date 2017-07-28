@@ -18,7 +18,9 @@ function MailBody_user($name,$supportmail,$naiyo) {
 	$mail_body .= "ご申請していただくことにより、下記の一般向け利用規約、プライバシーポリシー、特定商取引に関する表示に同意いただいたものとみなしますので、必ず規約を確認をしてください。".PHP_EOL;
 	$mail_body .= PHP_EOL.PHP_EOL;
 	//$mail_body .= "*****************************************************************************".PHP_EOL;
-	$mail_body .= file_get_contents('kiyaku_user.txt').PHP_EOL.PHP_EOL;
+	$mail_body .= file_get_contents('kiyaku_user.txt').PHP_EOL;
+	$mail_body .= file_get_contents('kiyaku_privacy.txt').PHP_EOL;
+	$mail_body .= file_get_contents('kiyaku_torihiki.txt').PHP_EOL;
 	//$mail_body .= "*****************************************************************************".PHP_EOL;
 	$mail_body .= PHP_EOL;
 	$mail_body .= "/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/".PHP_EOL;

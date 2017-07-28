@@ -13,6 +13,85 @@ html, body {
 	font-family:Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;	
 }
 
+/******************************************************/
+/*footer.tpl*/
+/******************************************************/
+
+
+footer{
+	font-family: 'Noto Sans', sans-serif;
+	font-size:10px;
+}
+
+@media screen and (min-width : 768px){
+footer{
+	font-family: 'Noto Sans', sans-serif;
+	font-size:14px;
+}
+}
+
+footer a{
+	color:#333333;
+	text-decoration:none;
+}
+footer a:hover{
+	text-decoration:none;
+}
+
+#footer_totop{
+	text-align: right;
+}
+
+img.footer_totop{
+	margin-right: 20px;
+}
+
+#footer_block{
+	clear: both;
+	width:100%;
+	height:50px;
+	padding-top:20px;
+	background-color:#CCCCCC;
+	
+}
+#footer_div{
+	float: left;
+	margin-left: 20px;
+}
+
+#footer_copy{
+	clear: both;
+	background-color:#CCCCCC;
+	padding-bottom: 50px;
+	padding-left: 20px;
+	
+}
+
+#footer_totop{
+	clear: both;
+	float: right;
+	width:100%;
+	height: 60px;
+	position: relative;
+}
+
+#footer_totop_sankaku{
+	position: absolute;
+	top: 0;
+	right: 20px;
+	width: 0;
+	height: 0;
+	border: 30px solid transparent;
+	border-bottom:30px solid #CCCCCC;
+	line-height: 30px;
+}
+#footer_totop_moji{
+	position: absolute;		
+	top: 45px;
+	right: 40px;
+}
+
+
 input[type="text"],select,textarea,input[type="file"],input[type="password"],input[type="number"],input[type="tel"],select{
 	clear:both;
 	float:left;
@@ -151,3 +230,5 @@ hr.header_img{
 .input_error{
 	color: red;
 }
+
+

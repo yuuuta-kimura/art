@@ -36,6 +36,8 @@ $o_smarty->assign( 'header_tpl', 'header_none.tpl' );
 $o_smarty->assign( 'footer_tpl', 'footer.tpl' );
 
 $kiyaku = file_get_contents('kiyaku_user.txt');
+$kiyaku = $kiyaku.PHP_EOL.file_get_contents('kiyaku_privacy.txt');
+$kiyaku = $kiyaku.PHP_EOL.file_get_contents('kiyaku_torihiki.txt');
 $o_smarty->assign( 'kiyaku', $kiyaku );
 $error=0;
 $message="登録に失敗しました";

@@ -86,50 +86,75 @@ if(!empty($_SESSION['artist_id'])&&!empty($_SESSION['artist_pass']))
 
 		$count=1;
 		$over=0;
+		
+		$html='<table border="1" padding="10">';
+		$html.='<tr><th class="text-center" width="10%"></th>
+		<th class="text-center" width="10%">ステータス</th>
+		<th class="text-center" width="10%">TOP</th>
+		<th class="text-center" width="10%">アップ画像</th>
+		<th class="text-center" width="40%">タイトル</th>
+		<th class="text-center" width="5%">注文数</th>
+		<th class="text-center width="5%">在庫数</th>
+		<th class="text-center" width="10%">登録日時</th></tr>
+		';
+		
+		
 		while($data=$record->fetch(PDO::FETCH_ASSOC))
 		{
 			if($count<=$page_group)
 			{
+				//注文数
+				$sql2 =sprintf('SELECT COUNT(zaiko_seq_id) FROM TT_ORDER_WORKS AS t1 INNER JOIN TM_ORDER AS t2 ON t1.order_char = t2.order_char WHERE t1.works_id=%d',$data['works_id']);
+				$res2 = $db->query($sql2);
+				$CNT2 = $res2->fetchColumn();
 
-				$html.='<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-top:10px;">';
+				//在庫数
+				$sql3 =sprintf('SELECT COUNT(seq_id) FROM TT_WORKS_ZAIKO WHERE order_id IS NULL AND works_id=%d',$data['works_id']);
+				$res3 = $db->query($sql3);
+				$CNT3 = $res3->fetchColumn();
+				
+				
 				$html.='<form action="" method="post" name="">';
 				$html.='<input type="hidden" name="artist_id" id="artist_id" value="'.$artist_id.'"/>';
 				$html.='<input type="hidden" name="works_id" id="works_id" value="'.$data['works_id'].'"/>';
-				$html.='<div style="float:left; margin:0 10px 0 0;">';
-				$html.='<input type="submit" class="smallbutton" name="edit_btn" id="edit_btn" value="編集"/>';
-				$html.='</div>';	
 
 				if($data['open_flg']){
-					$html.='<div style="float:left; margin:0 10px 0 0; width:40px;">';
-					$html.='<font color="red">公開中</font>';
-					$html.='</div>';
+					$open_flg='公開中';
 				}else{
-					$html.='<div style="float:left; margin:0 10px 0 0; width:40px;">';
-					$html.='非公開';
-					$html.='</div>';
+					$open_flg='非公開';
 				}
 				
 				if($data['top_open_flg']){
-					$html.='<div style="float:left; width:40px;">TOP</div>';
+					$TOP_flg='TOP';
 				}else{
-					$html.='<div style="float:left; width:40px;">---</div>';
+					$TOP_flg='---';
 				}
-
 				
-				$html.='<div style="float:left; margin:0 0 0 10px;">';
-
 				if(!empty($data['main_pic'])){
-					$html.=sprintf('<img src="%s">',$data['main_pic']);
+					$mainpic=sprintf('<img src="%s">', $data['main_pic']);
 				}else{
-					$html.='<div id="nopicture">no image</div>';
+					$mainpic='no image';
 				}
+				
+				$html.=sprintf('<tr><td class="text-center"><input type="submit" class="smallbutton" name="edit_btn" id="edit_btn" value="編集"/></td>
+								<td class="text-center">%s</td>
+								<td class="text-center">%s</td>
+								<td class="text-center" style="padding:3px;">%s</td>
+								<td class="text-left" style="padding:10px;">%s</td>
+								<td class="text-right" style="padding:10px;">%s</td>
+								<td class="text-right" style="padding:10px;">%s</td>
+								<td class="text-center">%s</td>
+								</tr>',
+							 	$open_flg,
+							 	$TOP_flg,
+							    $mainpic,
+							    $data['title'],
+							    $CNT2,
+							    $CNT3,
+							    $data['regist_time']
+							 	);					
 
-				$html.='</div>';
-				$html.='<div style="float:left; margin:0 0 0 20px;">';
-				$html.=$data['title'];
-				$html.='</div>';
-				$html.='</form>';	
-				$html.='</div>';	
+				$html.='</form>';
 
 				$count=$count+1;
 			}else{
@@ -137,6 +162,7 @@ if(!empty($_SESSION['artist_id'])&&!empty($_SESSION['artist_pass']))
 				break;
 			}
 		}
+		$html.='</table>';
 		$record=NULL;
 
 		$params['html']=$html;

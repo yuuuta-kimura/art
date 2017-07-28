@@ -21,6 +21,7 @@
         
         <li><a href="prof_artist.php"><span class="glyphicon glyphicon-user"></span> プロフィール</a></li>
         <li><a href="artist_changepassword.php"><span class="glyphicon glyphicon-lock"></span> パスワードを変更</a></li>
+        <li><a href="teikei.php?ptn=a"><i class="fa fa-file-text-o" aria-hidden="true"></i> 発送マニュアル</a></li>
         <li><a href="artist_logout.php"><span class="glyphicon glyphicon-off"></span> ログアウト</a></li>
       </ul>          
     </div>
