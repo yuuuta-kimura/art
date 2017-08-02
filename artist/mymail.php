@@ -19,7 +19,9 @@ function MailBody_first($nickname,$supportmail,$naiyo) {
 	$mail_body .= "なお、ご登録していただくことにより、下記の規約に同意いただいたものとみなしますので、必ず規約を確認をしてください。".PHP_EOL;
 	$mail_body .= PHP_EOL.PHP_EOL;
 	$mail_body .= "*****************************************************************************".PHP_EOL;
-	$mail_body .= file_get_contents('kiyaku.txt').PHP_EOL.PHP_EOL;
+	$mail_body .= file_get_contents('kiyaku_artist.txt').PHP_EOL.PHP_EOL;
+	$mail_body .= file_get_contents('../user/kiyaku_privacy.txt').PHP_EOL.PHP_EOL;
+	$mail_body .= file_get_contents('../user/kiyaku_torihiki.txt');
 	$mail_body .= "*****************************************************************************".PHP_EOL;
 	$mail_body .= PHP_EOL;
 	$mail_body .= "/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/".PHP_EOL;

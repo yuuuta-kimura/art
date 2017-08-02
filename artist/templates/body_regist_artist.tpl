@@ -188,8 +188,7 @@
 		<div id="error_doui" class="input_error"></div>
 
 		<div style="width:100%;">
-		<textarea name="text_kiyaku" class="textarea_kiyaku" id="text_kiyaku" style="width:90%;height:200px;"> 
-		{$kiyaku}
+		<textarea name="text_kiyaku" class="textarea_kiyaku" id="text_kiyaku" style="width:90%;height:200px;">{$kiyaku}
 		</textarea>
 		</div>
 

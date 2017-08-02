@@ -10,6 +10,7 @@
 <?php wp_head();//プラグインの実行に必要なタグ ?>
 
 
+<link rel="icon" href="favicon.ico">
 
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 

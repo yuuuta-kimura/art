@@ -7,6 +7,8 @@
 </div>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-top:50px;">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
 <font size="+1">
 <p>１.作品の注文が発生すると、登録したメールアドレスにお知らせが届きます</p>
 <BR>
@@ -23,6 +25,7 @@
 	<font size="-1"><BR>　※「発送」状態にしない場合は、発注者に発送したことをお知らせできません</font>
 </p>
 </font>
+</div>
 </div>
 
 <font size="+2">
